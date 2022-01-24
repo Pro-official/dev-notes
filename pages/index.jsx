@@ -7,7 +7,7 @@ import { sanityClient, urlFor } from "../sanity";
 import styles from "../styles/Home.module.css";
 
 export default function Home(props) {
-  console.log();
+  console.log(props);
   return (
     <>
       <Head>
@@ -19,30 +19,35 @@ export default function Home(props) {
       <Banner></Banner>
 
       {/* Articles  */}
-      <article className="mt-8 w-full max-w-7xl mx-auto md:p-4 cursor-pointer mb-10 hover:drop-shadow-lg hover:shadow-lg rounded-lg">
+      <article className="mt-8 w-full max-w-7xl mx-auto md:p-4 mb-10 hover:drop-shadow-lg hover:shadow-lg rounded-lg">
         {props.posts.map((post) => (
           <>
-            <Link
+            {/* <Link
               className={styles.links}
               href={`/post/${post.slug.current}`}
               key={post._id}
-            >
+            > */}
+            <div key={post._id}>
               {post.featured && (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 ">
                   <div>
-                    <img
-                      className="rounded-lg"
-                      src={urlFor(post.mainImage).url()}
-                      alt=""
-                    />
+                    <Link href={`/post/${post.slug.current}`} passHref>
+                      <img
+                        className="rounded-lg h-96 w-full cursor-pointer"
+                        src={urlFor(post.mainImage).url()}
+                        alt=""
+                      />
+                    </Link>
                   </div>
                   <div className="my-auto">
                     <h4 className="font-links font-bold uppercase underline underline-offset-4 text-base">
                       {post.categories}
                     </h4>
-                    <h1 className="hover:underline underline-offset-2 title text-5xl leading-12 font-title font-black mt-6">
-                      {post.title}
-                    </h1>
+                    <Link href={`/post/${post.slug.current}`} passHref>
+                      <h1 className="hover:underline underline-offset-2 title text-5xl leading-12 font-title font-black mt-6 w-11/12 cursor-pointer">
+                        {post.title}
+                      </h1>
+                    </Link>
                     <p className="mt-6 w-11/12 font-normal leading-none text-xl font-semibold">
                       {post.description}
                     </p>
@@ -53,6 +58,39 @@ export default function Home(props) {
                   </div>
                 </div>
               )}
+              {/* </Link> */}
+            </div>
+          </>
+        ))}
+      </article>
+      <hr className="w-full md:max-w-7xl mx-auto border-black" />
+      <article className="w-full md:max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 p-2 lg:p-6">
+        {props.posts.map((post) => (
+          <>
+            {/* {post.featured && <h1 className="mb-10">{post.title}</h1>} */}
+            <Link key={post._id} passHref href={`/post/${post.slug.current}`}>
+              <div className="group cursor-pointer shadow-lg hover:shadow-xl border rounded-lg overflow-hidden">
+                <img
+                  className="h-60 w-full object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out"
+                  src={urlFor(post.mainImage).url()}
+                  alt=""
+                />
+                <div className="flex justify-between items-center py-5 px-3 bg-white">
+                  <div>
+                    <h1 className="text-lg font-header leading-none font-bold ">
+                      {post.title}
+                    </h1>
+                    <p className="text-xs mt-4 leading-none">
+                      {post.description} by {post.author.name}
+                    </p>
+                  </div>
+                  <img
+                    className="h-12 w-12 ml-2 rounded-full"
+                    src={urlFor(post.author.image).url()}
+                    alt=""
+                  />
+                </div>
+              </div>
             </Link>
           </>
         ))}
