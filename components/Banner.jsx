@@ -14,18 +14,19 @@ const Banner = () => {
         becoming of what you desire. Make it your personal blog, share your
         knowledge with the world, and learn from the best.
       </p>
-      <div>
+      <div className="mb-24">
         <Link href="/explore" passHref>
-          <button className="text-white font-links font-bold text-xl bg-black px-4 py-2 rounded-lg mr-4">
+          <button className="text-white drop-shadow-2xl border-2 font-links font-bold text-xl bg-black px-4 py-2 rounded-lg mr-4 hover:text-black hover:bg-white hover:border-2 border-black">
             Explore More
           </button>
         </Link>
         <Link href="/learn" passHref>
-          <button className="text-black font-links font-bold text-xl bg-transparent border-2 border-black px-4 py-2 rounded-lg">
+          <button className="text-black drop-shadow-2xl font-links font-bold text-xl bg-transparent border-2 border-black px-4 py-2 rounded-lg hover:text-white hover:bg-black ">
             Learn More
           </button>
         </Link>
       </div>
+      <hr className=" border-black" />
     </div>
   );
 };

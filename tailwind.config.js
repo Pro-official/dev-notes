@@ -28,9 +28,10 @@ module.exports = {
       "8xl": "6rem",
     },
     lineHeight: {
+      none: "1.2",
       "extra-loose": "2.5",
       12: "3rem",
-      15: "5.5rem",
+      15: "5rem",
     },
   },
   plugins: [],
