@@ -28,7 +28,7 @@ module.exports = {
       "8xl": "6rem",
     },
     lineHeight: {
-      none: "1.2",
+      none: "1",
       "extra-loose": "2.5",
       10: "1.3",
       12: "3rem",

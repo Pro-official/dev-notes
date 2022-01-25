@@ -18,7 +18,10 @@ export default function Home(props) {
       <Banner></Banner>
 
       {/* Articles  */}
-      <article className="mt-20 w-full max-w-7xl mx-auto md:p-4 mb-20 hover:drop-shadow-lg hover:shadow-lg rounded-lg ">
+      <article
+        id="explore"
+        className="mt-20 w-full max-w-7xl mx-auto md:p-4 mb-20 hover:drop-shadow-lg hover:shadow-lg rounded-lg "
+      >
         {props.posts.map((post) => (
           <>
             {/* <Link
@@ -66,7 +69,6 @@ export default function Home(props) {
       <article className="mt-20 w-full md:max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 p-2 lg:p-6">
         {props.posts.map((post) => (
           <>
-            {/* {post.featured && <h1 className="mb-10">{post.title}</h1>} */}
             <Link key={post._id} passHref href={`/post/${post.slug.current}`}>
               <div className="group cursor-pointer shadow-lg hover:shadow-xl border rounded-lg overflow-hidden">
                 <img
@@ -76,7 +78,7 @@ export default function Home(props) {
                 />
                 <div className="flex justify-between items-center py-5 px-3 bg-white">
                   <div>
-                    <h1 className="text-lg font-header leading-none font-bold ">
+                    <h1 className="text-lg group-hover:underline group-focus:text-blue-900 font-header leading-none font-bold ">
                       {post.title}
                     </h1>
                     <p className="text-base mt-4 leading-none">

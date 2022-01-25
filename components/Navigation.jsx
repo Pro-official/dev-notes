@@ -37,7 +37,7 @@ export default function Navigation() {
     <>
       <Popover className="md:max-w-7xl w-full mx-auto mt-4 flex items-center justify-between">
         <Link href="/" passHref>
-          <div className="flex items-center">
+          <div className="flex items-center cursor-pointer">
             <h1 className="text-4xl font-black font-header ">DevNotes</h1>
             <p className="leading-none ml-2 text-sm font-title font-bold">
               The Blog
