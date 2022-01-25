@@ -1,10 +1,9 @@
+/* eslint-disable @next/next/no-img-element */
 import Head from "next/head";
-import Image from "next/image";
 import Link from "next/link";
 import Banner from "../components/Banner";
 import Navigation from "../components/Navigation";
 import { sanityClient, urlFor } from "../sanity";
-import styles from "../styles/Home.module.css";
 
 export default function Home(props) {
   console.log(props);
@@ -19,7 +18,7 @@ export default function Home(props) {
       <Banner></Banner>
 
       {/* Articles  */}
-      <article className="mt-8 w-full max-w-7xl mx-auto md:p-4 mb-10 hover:drop-shadow-lg hover:shadow-lg rounded-lg">
+      <article className="mt-20 w-full max-w-7xl mx-auto md:p-4 mb-20 hover:drop-shadow-lg hover:shadow-lg rounded-lg ">
         {props.posts.map((post) => (
           <>
             {/* <Link
@@ -29,7 +28,7 @@ export default function Home(props) {
             > */}
             <div key={post._id}>
               {post.featured && (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 ">
+                <div className=" grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 ">
                   <div>
                     <Link href={`/post/${post.slug.current}`} passHref>
                       <img
@@ -64,7 +63,7 @@ export default function Home(props) {
         ))}
       </article>
       <hr className="w-full md:max-w-7xl mx-auto border-black" />
-      <article className="w-full md:max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 p-2 lg:p-6">
+      <article className="mt-20 w-full md:max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 p-2 lg:p-6">
         {props.posts.map((post) => (
           <>
             {/* {post.featured && <h1 className="mb-10">{post.title}</h1>} */}
@@ -80,8 +79,14 @@ export default function Home(props) {
                     <h1 className="text-lg font-header leading-none font-bold ">
                       {post.title}
                     </h1>
-                    <p className="text-xs mt-4 leading-none">
-                      {post.description} by {post.author.name}
+                    <p className="text-base mt-4 leading-none">
+                      {post.description.slice(0, 50)}
+                      {"... "}
+                      <span className="text-blue-500">
+                        <Link href={`/post/${post.slug.current}`} passHref>
+                          Read More
+                        </Link>
+                      </span>
                     </p>
                   </div>
                   <img

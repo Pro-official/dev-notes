@@ -14,6 +14,11 @@ export default {
       type: "string",
     },
     {
+      name: "time",
+      title: "Minutes to Read",
+      type: "number",
+    },
+    {
       name: "slug",
       title: "Slug",
       type: "slug",
