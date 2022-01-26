@@ -7,12 +7,12 @@ const Banner = () => {
     <div className="md:max-w-7xl w-full mx-auto text-center ">
       <h1 className="font-header mt-40 font-bold text-6xl md:text-8xl leading-15 text-black my-auto mb-8">
         The Modern <span className={styles.secondBtn}>Blog</span> <br /> For
-        Developers
+        Developer
       </h1>
       <p className="md:max-w-3xl w-full mx-auto text-xl font-normal mb-8">
         DevNotes gives you access to the best resources for learning and
-        becoming of what you desire. Make it your personal blog, share your
-        knowledge with the world, and learn from the best.
+        becoming of what you desire. Make it your personal note, share knowledge
+        with the world, and learn from the best.
       </p>
       <div className="mb-24">
         <Link href="/#explore" scroll={true} passHref>

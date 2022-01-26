@@ -194,7 +194,7 @@ const Post = ({ post }) => {
 export default Post;
 
 export const getStaticPaths = async () => {
-  const query = `*[_type == "post"]{
+  const query = `*[_type == "blogs"]{
         _id,
         slug {
             current
@@ -215,7 +215,7 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params }) => {
-  const query = `*[_type == "post" && slug.current == $slug][0]{
+  const query = `*[_type == "blogs" && slug.current == $slug][0]{
     _id,
     title,
     description,

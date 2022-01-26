@@ -24,7 +24,7 @@ const solutions = [
   },
   {
     name: "SIGN UP",
-    href: "/register",
+    href: "/signin",
   },
 ];
 
@@ -49,7 +49,7 @@ export default function Navigation() {
 
         <Popover.Group as="nav" className="hidden md:flex space-x-10">
           <Link href="/">
-            <a className="text-base font-links font-bold mt-2 mr-2 hover:text-blue-500 hover:underline underline-offset-4">
+            <a className="text-base font-links font-bold mt-2 mr-2 hover:text-blue-500 hover:underline focus:text-black underline-offset-4">
               HOME
             </a>
           </Link>
@@ -70,7 +70,7 @@ export default function Navigation() {
               ABOUT
             </a>
           </Link>
-          <Link href="/register">
+          <Link href="/signin">
             <a className="text-base font-links font-bold border-solid border-2 border-black px-2 py-1 mr-2 rounded-lg hover:bg-black hover:text-white">
               SIGN UP
             </a>

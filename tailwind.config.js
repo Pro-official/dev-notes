@@ -32,6 +32,7 @@ module.exports = {
       "extra-loose": "2.5",
       10: "1.3",
       12: "3rem",
+      14: "3.5rem",
       15: "5rem",
     },
   },

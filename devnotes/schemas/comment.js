@@ -24,7 +24,7 @@ export default {
     {
       name: "post",
       type: "reference",
-      to: [{ type: "post" }],
+      to: [{ type: "post" && "blogs" }],
     },
   ],
 };
