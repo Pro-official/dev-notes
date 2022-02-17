@@ -6,7 +6,7 @@ const Banner = () => {
   return (
     <div className="md:max-w-7xl w-full mx-auto text-center ">
       <h1 className="font-header mt-40 font-bold text-6xl md:text-8xl leading-15 text-black my-auto mb-8">
-        The Modern <span className={styles.secondBtn}>Blog</span> <br /> For
+        The Modern <span className={styles.secondBtn}>Blog</span> <br /> of
         Developer
       </h1>
       <p className="md:max-w-3xl w-full mx-auto text-xl font-normal mb-8">

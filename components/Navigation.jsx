@@ -70,6 +70,13 @@ export default function Navigation() {
               ABOUT
             </a>
           </Link>
+          <a
+            href="/Resume.pdf"
+            download
+            className="text-base font-links font-bold mt-2 mr-2 hover:text-blue-500 hover:underline underline-offset-4"
+          >
+            RESUME
+          </a>
           <Link href="/signin">
             <a className="text-base font-links font-bold border-solid border-2 border-black px-2 py-1 mr-2 rounded-lg hover:bg-black hover:text-white">
               SIGN UP
